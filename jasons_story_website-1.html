@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#120d19">
+<title>Jason's Story — The Big Shift</title>
+<style>
+:root{--bg:#120d19;--panel:#211827;--gold:#f2c879;--pink:#efa9c1;--text:#fff8f0;--muted:#cbbfca}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,serif;line-height:1.8}
+nav{position:sticky;top:0;z-index:5;background:#120d19ed;border-bottom:1px solid #ffffff18;padding:15px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font:800 1rem Arial,sans-serif;letter-spacing:2px;color:var(--gold)}
+nav a{color:var(--text);text-decoration:none;font:700 .8rem Arial,sans-serif;margin-left:16px}
+.hero{min-height:76vh;display:grid;place-items:center;text-align:center;padding:70px 8%;background:linear-gradient(#120d1855,#120d18),radial-gradient(ellipse at 50% 20%,#704057,#281a30 60%,#120d19)}
+.eyebrow{font:700 .75rem Arial,sans-serif;letter-spacing:4px;text-transform:uppercase;color:var(--gold)}
+h1{font:900 clamp(3rem,10vw,6rem)/1 Arial,sans-serif;letter-spacing:-3px;margin:18px 0}
+h1 span{color:var(--pink)}
+.hero p{max-width:680px;color:var(--muted);font-size:1.1rem;margin:0 auto 25px}
+.btn{display:inline-block;background:var(--gold);color:#24172a;text-decoration:none;border-radius:28px;padding:12px 22px;font:bold .85rem Arial,sans-serif}
+section{padding:65px 8%}
+.title{text-align:center;font:800 clamp(2rem,5vw,3rem) Arial,sans-serif;margin:0 0 10px}
+.subtitle{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 30px}
+.notice{max-width:850px;margin:0 auto 20px;padding:13px 17px;border:1px solid #e9a6bd55;background:#3a202f;border-radius:12px;color:#f5dce6;font: .9rem Arial,sans-serif}
+.story{max-width:850px;margin:auto;padding:clamp(22px,5vw,45px);background:var(--panel);border:1px solid #ffffff18;border-radius:20px;box-shadow:0 20px 60px #0003}
+.label{font:700 .72rem Arial,sans-serif;letter-spacing:3px;color:var(--gold)}
+.story h2{font-size:2rem;margin:8px 0 22px;line-height:1.2}
+.story p{color:#e8dfe8;margin:0 0 17px}
+.story p:first-of-type:first-letter{font-size:2.5rem;float:left;line-height:1;margin:6px 8px 0 0;color:var(--pink)}
+.story-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px}
+.story-nav button{background:#3b2b43;color:var(--text);border:1px solid #ffffff25;border-radius:25px;padding:11px 17px;cursor:pointer}
+.story-nav button:disabled{opacity:.35;cursor:not-allowed}
+.counter{font: .8rem Arial,sans-serif;color:var(--muted)}
+.quote{background:linear-gradient(120deg,#2c1b34,#49253b);text-align:center}
+blockquote{max-width:800px;margin:auto;font-size:clamp(1.5rem,4vw,2.3rem);font-style:italic}
+blockquote span{color:var(--pink)}
+.characters{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:850px;margin:30px auto 0}
+.person{background:var(--panel);border:1px solid #ffffff15;border-radius:14px;padding:18px}
+.person b{color:var(--gold);font:700 1rem Arial,sans-serif}
+.person p{margin:5px 0 0;color:var(--muted);font-size:.95rem}
+footer{text-align:center;padding:28px;color:#a99caf;border-top:1px solid #ffffff15;font: .8rem Arial,sans-serif}
+@media(max-width:650px){nav{padding:14px 5%}nav a{font-size:.72rem;margin-left:9px}.characters{grid-template-columns:1fr}.story-nav{flex-wrap:wrap}.hero{min-height:70vh}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">JASON'S STORY</div>
+  <div><a href="#chapters">THE STORY</a><a href="#people">THE PEOPLE</a></div>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="eyebrow">A Nigerian family story</div>
+    <h1>MY LIFE,<br><span>MY STORY.</span></h1>
+    <p>From unexpected nights and difficult family moments to the twists nobody saw coming. This is my side of the story.</p>
+    <a class="btn" href="#chapters">Start reading ↓</a>
+  </div>
+</header>
+
+<section id="chapters">
+  <h2 class="title">The Story So Far</h2>
+  <p class="subtitle">Told in Jason's voice. Some names and identifying details have been changed for privacy before sharing publicly.</p>
+  <div class="notice">Content note: This story mentions domestic violence and frightening experiences involving children. The events are described without graphic detail.</div>
+  <article class="story">
+    <div class="label" id="chapter-label">INTRODUCTION</div>
+    <h2 id="chapter-title">So, Hi. I'm Jason 😉</h2>
+    <div id="chapter-text"></div>
+    <div class="story-nav">
+      <button id="prev" onclick="move(-1)" disabled>← Previous</button>
+      <span class="counter" id="counter">1 / 3</span>
+      <button id="next" onclick="move(1)">Next chapter →</button>
+    </div>
+  </article>
+</section>
+
+<section class="quote">
+  <blockquote>“Sometimes the people who are supposed to protect you are the ones you need protection <span>from.</span>”</blockquote>
+</section>
+
+<section id="people">
+  <h2 class="title">Meet the Family</h2>
+  <p class="subtitle">The main people in Jason's story.</p>
+  <div class="characters">
+    <div class="person"><b>Jason</b><p>The narrator. A Nigerian boy telling the story from his point of view.</p></div>
+    <div class="person"><b>Jayden</b><p>Jason's little brother — spoilt, energetic, and never boring.</p></div>
+    <div class="person"><b>Jessica</b><p>Jason's sister, who has a big personality and her own struggles.</p></div>
+    <div class="person"><b>Mum</b><p>A determined woman who works hard to make a safer life for her children.</p></div>
+    <div class="person"><b>Dad</b><p>Jason's father. The relationship is complicated, especially because of his violence and reported involvement with a cult.</p></div>
+    <div class="person"><b>Mummy John and her family</b><p>The family who gave Jason, his siblings, and their mum somewhere to stay when they needed help.</p></div>
+  </div>
+</section>
+
+<footer>JASON'S STORY · A personal story told one chapter at a time</footer>
+
+<script>
+const chapters=[
+{label:"INTRODUCTION",title:"So, Hi. I'm Jason 😉",paragraphs:[
+"So hi, I'm Jason, and I'm from Nigeria. My life has been a lot to handle. There has been family drama, frightening moments at home, my dad's reported involvement with a cult, and things no child should have to witness. But let me tell you the story.",
+"First, meet the family. There's my little brother, Jayden — a spoilt troublemaker 😂. Then there's my sister, Jessica 💋, who has her own issues and can be a handful. There's my mum, who has been trying to keep things together. And finally, my dad. He can be nice at times, but he has also been violent towards my mum. That's a big part of why this story is so complicated."
+]},
+{label:"CHAPTER ONE",title:"The Beginning",paragraphs:[
+"My story starts with me and my sister asleep one night. We were still children when we heard shouting and screaming coming from our parents' room. We went to see what was happening, and what we found terrified us: Dad was attacking Mum and holding her by the neck. We started crying and begging him to stop.",
+"Earlier that day, Mum had gone out, and Dad came home late. We hadn't had a proper meal, so all we'd managed that evening was tea. Mum eventually came back upset, and an argument started between our parents. By the time we heard the noise, we had already fallen asleep.",
+"Our neighbours heard the commotion and came to check on us. My sister's screaming could wake an entire street 😭. By the time help arrived, Mum had been badly hurt. There had also been a screwdriver and broken glass involved. It was a terrifying night, and we needed to get somewhere safe.",
+"We left in Mum's car and went straight to the home of her close friend, Mummy John. She welcomed us in. Her husband knew Dad too, and he spoke to him about what had happened.",
+"The days that followed were strange. Mum sometimes had to sneak back to the house to collect our belongings. My sister had screamed so much that she temporarily lost her voice. We spent a lot of time at Mummy John's home, where we got to know her four children: John, Citadel, Rehoboth, and Bethany — from oldest to youngest. Bethany could be a real handful, but she could also be cool sometimes 😂.",
+"After a few months, Mum got a big job and we moved into a new place. She never stopped us from seeing Dad. We would visit him during the holidays and return to Mum's home when school started again."
+]},
+{label:"CHAPTER TWO",title:"The Big Shift",paragraphs:[
+"As you already know, we usually went to Dad's place during the holidays. Then one particular holiday, we arrived and found a woman there — someone Dad introduced as his friend. But it soon became clear that she was actually his girlfriend.",
+"One night, Dad came home late. The woman told us we couldn't eat until he returned. We were hungry, confused, and crying. We didn't understand why we had to wait for someone else before we could have food.",
+"Mum called, and we told her what was happening. She came and picked us up. We thought she was simply taking us somewhere we could eat and feel comfortable.",
+"But that was the moment everything changed. And that, my people, is where the real problem started… 😭"
+]}
+];
+let current=0;
+function render(){
+ const c=chapters[current];
+ document.getElementById("chapter-label").textContent=c.label;
+ document.getElementById("chapter-title").textContent=c.title;
+ document.getElementById("chapter-text").innerHTML=c.paragraphs.map(p=>"<p>"+p+"</p>").join("");
+ document.getElementById("counter").textContent=(current+1)+" / "+chapters.length;
+ document.getElementById("prev").disabled=current===0;
+ document.getElementById("next").disabled=current===chapters.length-1;
+ document.getElementById("next").textContent=current===chapters.length-1?"End of story so far":"Next chapter →";
+}
+function move(n){current=Math.max(0,Math.min(chapters.length-1,current+n));render();}
+render();
+</script>
+</body>
+</html>
